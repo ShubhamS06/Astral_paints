@@ -6,6 +6,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import HeroSectoin from "@/components/HeroSectoin"
 import Aboutsection from "@/components/Aboutsection"
+import Categorysection from "@/components/Categorysection"
 import CommonHeading from "@/common/CommonHeading"
 
 
@@ -21,12 +22,17 @@ export default function Home() {
     { text: "contact", path: "/contactus" },
     { text: "Enquire Now", path: "#heroSection", primary: true },
   ];
-  const catagoryImages =[
-    {img_url :'assets/catagory1st_img.png', title : 'Interior Paints'},
-    {img_url :'assets/catagory2nd_img.png', title : 'Exterior Paints'},
-    {img_url :'assets/catagory3rd_img.png', title : 'Water Proofing'},
-    {img_url :'assets/catagory4rth_img.png', title : 'Undercoats'},
-    {img_url :'assets/catagory5th_img.png', title : 'Painting Tools'},
+  const catagoryImages = [
+    { img_url: 'assets/catagory1st_img.png', title: 'Interior Paints' },
+    { img_url: 'assets/catagory2nd_img.png', title: 'Exterior Paints' },
+    { img_url: 'assets/catagory3rd_img.png', title: 'Water Proofing' },
+    { img_url: 'assets/catagory4rth_img.png', title: 'Undercoats' },
+    { img_url: 'assets/catagory5th_img.png', title: 'Painting Tools' },
+  ]
+  const servicesImages = [
+    { img_url: 'assets/searvice_img_1st.png', title: 'Wall Painting', description: 'Lorem ipsum dolor sit amet consectetur. ' },
+    { img_url: 'assets/searvice_img_2nd.png', title: 'Water Solution', description: 'Lorem ipsum dolor sit amet consectetur. ' },
+    { img_url: 'assets/searvice_img_3rd.png', title: 'Painting', description: 'Lorem ipsum dolor sit amet consectetur. ' },
   ]
   return (
     <>
@@ -66,51 +72,34 @@ export default function Home() {
       </Navbar>
 
       <div className="page bg-white">
-        <main className={`${styles.main} bg-white z-2`}>
+        <main className={`${styles.main} bg-white z-2 text-capitalize`}>
           <HeroSectoin styles={styles} />
           <Aboutsection styles={styles} />
-          {/* <section className={`${styles.aboutSection} bg-white text-black py-5 mb-5`}>
-            <div className={styles.vl}></div>
-            <div className="row py-5 px-5">
-              <div className="col-6 px-5">
-                <CommonHeading title={"Bringing your dreams to life"} subtitle={"About Astral Paints"} lineImg={"assets/about_headingLine.png"} alt={"about_headingLine"} />
-                <p style={{ fontSize: '16px', color: '#656565' }}>
-                  Lorem ipsum dolor sit amet consectetur. Placerat elementum lobortis phasellus porttitor amet odio tempor. Ac molestie fames id urna dui posuere ultricies aliquam. Gravida et ac ac donec. Lacus est diam at in pharetra velit luctus id pellentesque.
-                  <br />
-                  <br />
-                  Lorem ipsum dolor sit amet consectetur. Placerat elementum lobortis phasellus porttitor amet odio tempor. Ac molestie fames id urna dui posuere ultricies aliquam. Gravida et ac ac donec. Lacus est diam at in pharetra velit luctus id pellentesque.
-                </p>
-                <button className="btn btn-outline-danger rounded-5 mt-3"> Read more</button>
-              </div>
-              <div className="rightCol col-6">
-                <img className={styles.aboutRightImg} src="assets/aboutRightImg.png" alt="aboutRightImg" />
-              </div>
-            </div>
-          </section> */}
-          <section className={`${styles.aboutSection} bg-white text-black`}>
-            <div className={styles.catagory_vl}></div>
-            <div style={{ display: 'flex', flexDirection: "column", padding:'20px 90px' }}>
-              <CommonHeading title={"Bringing your dreams to life"} subtitle={"About Astral Paints"} lineImg={"assets/about_headingLine.png"} alt={"about_headingLine"} />
-              <div className="row py-5 px-5">
-                <div className="col-5 px-5 align-items-center ">
-                  <img style={{width: '100%', height:'90%', marginTop:"5%" }} src={catagoryImages[0].img_url} alt="catagory1st_img" />
-                </div>
-                <div className="col-6 d-flex flex-wrap gap-5 ">
-                  {catagoryImages.map((card, index)=>{
-                    if (index === 0) {
-                      return
-                    }
-                    return(
-                      <div style={{display:'flex', flexDirection:'column', width: '40%',}}>
-                        <img src={card.img_url} alt={card.title} />
-                        <span>{card.title}</span>
-                      </div>
-                    )
-                  })}
-                  {/* <img className={styles.aboutRightImg} src="assets/aboutRightImg.png" alt="aboutRightImg" /> */}
-                </div>
+          <Categorysection styles={styles} catagoryImages={catagoryImages} />
 
+          <section className={`${styles.aboutSection} bg-white text-black`}>
+            <div className={styles.services_vl}></div>
+            <div style={{ display: 'flex', flexDirection: "column", padding: '20px 90px' }}>
+              <CommonHeading title={"make your life comfortable"} subtitle={"Services"} lineImg={"assets/category_title_line.png"} alt={"category_title_line"} />
+              {/* <div className="row"> */}
+              <div className="row w-100">
+                {servicesImages.map((card, index) => {
+
+                  return (
+                    <div key={index} className={`col-4 ${styles.services_wraped_Box}`} >
+                      <img src={card.img_url} alt={card.title} />
+                      <div className={styles.services_titlebox}>
+                        <h2>{card.title}</h2>
+                        <p>{card.description}</p>
+                        <a href="#" className={`${styles.white_a_btn} btn rounded-5 py-2`}>
+                          Read more
+                        </a>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
+              {/* </div> */}
             </div>
           </section>
         </main>

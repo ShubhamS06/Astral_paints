@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HeroSectoin({styles}) {
+function HeroSectoin({ styles }) {
   return (
     <div id='heroSection' className={styles.hero_container}>
       <div style={{ display: 'flex', width: "100%", color: '#fff' }} className="text-white z-2">
@@ -9,11 +9,7 @@ function HeroSectoin({styles}) {
             Interior <br /> Emulsions
           </h1>
           <p className="fw-light mb-3">Excellent fungal resistance | smooth finish</p>
-          <a
-            href="#"
-            style={{ color: '#5E4D7A', background: '#fff', width: '109px', fontSize: '12px', fontWeight: 'bold' }}
-            className="btn rounded-5 py-2"
-          >
+          <a href="#" className={`${styles.white_a_btn} btn rounded-5 py-2`}>
             Read more
           </a>
         </div>
