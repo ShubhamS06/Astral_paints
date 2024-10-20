@@ -3,7 +3,7 @@ import React from 'react'
 
 function Categorysection({ catagoryImages, styles }) {
     return (
-        <section className={`${styles.aboutSection} bg-white text-black`}>
+        <section id='catagoury' className={`${styles.aboutSection} bg-white text-black`}>
             <div className={styles.catagory_vl}></div>
             <div style={{ display: 'flex', flexDirection: "column", padding: '20px 90px' }}>
                 <CommonHeading title={"Wide range of Colours"} subtitle={"Category"} lineImg={"assets/category_title_line.png"} alt={"category_title_line"} />

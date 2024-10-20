@@ -3,7 +3,7 @@ import CommonHeading from "@/common/CommonHeading"
 
 function Aboutsection({styles}) {
     return (
-        <section className={`${styles.aboutSection} bg-white text-black py-5`}>
+        <section id='about' className={`${styles.aboutSection} bg-white text-black py-5`}>
             <div className={styles.about_vl}></div>
             <div className="row py-5 px-5">
                 <div className="col-6 px-5">

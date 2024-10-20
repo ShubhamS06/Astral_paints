@@ -7,19 +7,40 @@ import Link from "next/link";
 import HeroSectoin from "@/components/HeroSectoin"
 import Aboutsection from "@/components/Aboutsection"
 import Categorysection from "@/components/Categorysection"
-import CommonHeading from "@/common/CommonHeading"
+import ServicesSection from "@/components/ServicesSection"
+import { useEffect, useState } from "react";
 
 
 export default function Home() {
+  const [apiData, setApiData] = useState([]);
+
+  useEffect(() => {
+    const fetchLandingData = async () => {
+      try {
+        const response = await fetch('https://astralpaints.kwebmakerdigitalagency.com/graphql');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setApiData(data);
+      } catch (error) {
+        console.log('Error fetching data:', error);
+      }
+    };
+
+    fetchLandingData();
+  }, []);
+
+  console.log('apiData', apiData)
   const navRoutes = [
-    { text: "about", path: "#" },
-    { text: "catagoury", path: "#" },
-    { text: "services", path: "/about" },
-    { text: "colors", path: "/services" },
-    { text: "downloads", path: "/products" },
-    { text: "become a dealer", path: "/contactus", },
-    { text: "blogs", path: "/contactus", },
-    { text: "contact", path: "/contactus" },
+    { text: "about", path: "#about" },
+    { text: "catagoury", path: "#catagoury" },
+    { text: "services", path: "#services" },
+    { text: "colors", path: "#colors" },
+    { text: "downloads", path: "#downloads" },
+    { text: "become a dealer", path: "#become_dealer", },
+    { text: "blogs", path: "#blogs", },
+    { text: "contact", path: "#contact_us" },
     { text: "Enquire Now", path: "#heroSection", primary: true },
   ];
   const catagoryImages = [
@@ -76,32 +97,7 @@ export default function Home() {
           <HeroSectoin styles={styles} />
           <Aboutsection styles={styles} />
           <Categorysection styles={styles} catagoryImages={catagoryImages} />
-
-          <section className={`${styles.aboutSection} bg-white text-black`}>
-            <div className={styles.services_vl}></div>
-            <div style={{ display: 'flex', flexDirection: "column", padding: '20px 90px' }}>
-              <CommonHeading title={"make your life comfortable"} subtitle={"Services"} lineImg={"assets/category_title_line.png"} alt={"category_title_line"} />
-              {/* <div className="row"> */}
-              <div className="row w-100">
-                {servicesImages.map((card, index) => {
-
-                  return (
-                    <div key={index} className={`col-4 ${styles.services_wraped_Box}`} >
-                      <img src={card.img_url} alt={card.title} />
-                      <div className={styles.services_titlebox}>
-                        <h2>{card.title}</h2>
-                        <p>{card.description}</p>
-                        <a href="#" className={`${styles.white_a_btn} btn rounded-5 py-2`}>
-                          Read more
-                        </a>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-              {/* </div> */}
-            </div>
-          </section>
+          <ServicesSection styles={styles} servicesImages={servicesImages} />
         </main>
       </div>
     </>
