@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+
+/* .fontRibeyeMarrowRegular {
+  font-family: "Ribeye Marrow", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navBrandImg {
+  width: 12rem;
+}
+
+.headingFancy1 {
+  color: var(--color-black);
+  font-size: calc(var(--font-size-base) * 2.25);
+}
+
+.headingFancy1::after,
+.headingFancy1::before {
+  content: '';
+  display: inline-block;
+  width: 5rem;
+  transform: translateY(-.4ch);
+  border-bottom: 5px solid var(--color-primary);
+}
+
+.headingFancy1::before {
+  margin-right: 1rem;
+}
+
+.headingFancy1::after {
+  margin-left: 1rem;
+}
+
+.headingFancy2 {
+  color: var(--color-white);
+  border-bottom: 5px solid var(--color-white);
+  width: fit-content;
+  font-weight: 500;
+  position: relative;
+  font-size: calc(var(--font-size-base) * 2.25);
+}
+
+.headingFancy2::after {
+  content: '';
+  display: inline-block;
+  width: 5rem;
+}
+
+.headingFancy2::before {
+  content: '.';
+  position: absolute;
+  display: inline-block;
+  width: 1ch;
+  height: 1ch;
+  bottom: -.6ch;
+  right: -.5ch;
+  background-color: var(--color-white);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+} */
+/* 
+@media screen and (max-width: 640px) {
+  .headingFancy1 {
+    font-size: calc(var(--font-size-base) * 1.75);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .headingFancy1 {
+    text-align: center;
+    font-size: calc(var(--font-size-base) * 1.5);
+  }
+
+  .headingFancy1::after,
+  .headingFancy1::before {
+    width: 3rem;
+  }
+}
+
+ */
+
+
+
+
+
+
+.hero_container{
+  height: 120vh;
+  background-image: url("../public/assets/heroSectionBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: -20vh;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.hero_rainbow{
+  width: 100%;
+  position: absolute;
+  bottom: -250px;
+  z-index: 1;
+}
+.aboutSection{
+  position: relative;
+  /* min-height: 500px; */
+}
+.about_vl{
+  background: #E70000;
+  min-height: 100%;
+  width: 15px;
+  position: absolute;
+  top: 0px;
+}
+.catagory_vl{
+  background: linear-gradient(45deg, #FF9119, #E70000);
+  min-height: 100%;
+  width: 15px;
+  position: absolute;
+  top: 0px;
+}
+.aboutRightImg{
+  position: absolute;
+  top: 0px;
+  right: 100px;
+}

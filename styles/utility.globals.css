@@ -1,0 +1,65 @@
+.bg-section-gredient {
+    background: linear-gradient(99.85deg, #BA68C8 0%, rgba(186, 104, 200, 0) 100%);
+}
+
+.bg-section-gredient-low {
+    background: linear-gradient(99.85deg, rgba(186, 104, 200, 0.71) 0%, rgba(186, 104, 200, 0) 100%);
+}
+
+.font-lg {
+    font-size: calc(var(--font-size-base) * 1.125);
+}
+
+.font-22 {
+    font-size: calc(var(--font-size-base) * 1.375);
+}
+
+.font-24 {
+    font-size: calc(var(--font-size-base) * 1.5);
+}
+
+.font-42 {
+    font-size: calc(var(--font-size-base) * 2.625);
+}
+
+.font-xl {
+    font-size: calc(var(--font-size-base) * 1.75);
+}
+
+.font-2x {
+    font-size: calc(var(--font-size-base) * 2);
+}
+
+.font-36 {
+    font-size: calc(var(--font-size-base) * 2.25);
+}
+
+.font-3x {
+    font-size: calc(var(--font-size-base) * 3);
+}
+
+.shadow-dark {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.h-half {
+    height: 50%;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {    
+    .max-lg\:flex-wrap {
+        flex-wrap: wrap;
+    }
+}
